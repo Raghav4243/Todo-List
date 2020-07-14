@@ -1,0 +1,30 @@
+{% extends "todoapp/base.html" %}
+{% block my_block %}
+    <center>
+      <div class="jumbotron">
+        <h1>
+        Hello {{ user.first_name }} {{user.last_name}}<br>
+        </h1>
+        </div>
+    <div>
+      <br><hr><br>
+      <h1>Your Tasks for today are :-</h1>
+    </div>
+  </center>
+    <br><hr><br>
+    <div class="container">
+      <div class="jumbotron">
+        <table>
+          {% for i in todo_list %}
+          <tr>
+            <td><h3><li>{{ i.work }}</li></h3></td>
+            <td><a class="btn btn-danger" href="{% url 'Delete' pk=i.pk %}">Delete</a>  <a class="btn btn-warning" href="{% url 'update' pk=i.pk %}">Update</a></td>
+          </tr>
+          {% endfor %}
+        </table>
+</div>
+</div>
+<center>
+<a class="btn btn-primary" href="{% url 'CreateView' %}">New Task</a>
+</center>
+{% endblock %}

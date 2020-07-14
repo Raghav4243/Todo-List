@@ -1,0 +1,6 @@
+{% extends "todoapp/base.html" %}
+{% block my_block %}
+    {{  for i in todo_list }}
+    <li>{{i}}</li>
+
+{% endblock %}

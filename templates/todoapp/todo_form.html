@@ -1,0 +1,15 @@
+{% extends "todoapp/base.html" %}
+{% block my_block %}
+  <center>
+    <div class="container">
+      <div class="jumbotron">
+        <form method="post">
+          {% csrf_token %}
+          <h3>Work  </h3><br>
+          <textarea type="text" name="work" maxlength="123" required id="id_work" rows="8" cols="40"></textarea><br><br>
+          <input class="btn btn-success"  type="submit" value="Submit">
+        </form>
+        </div>
+      </div>
+      </center>
+{% endblock %}

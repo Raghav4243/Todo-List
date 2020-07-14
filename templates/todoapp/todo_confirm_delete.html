@@ -1,0 +1,20 @@
+{% extends "todoapp/base.html" %}
+{% block my_block %}
+    <div class="container">
+      <div class="jumbotron">
+        <h3>
+        Delete : <br>
+        </h3>
+        <br>
+        <h2>
+        <li>{{ todo.work }}</li>
+        </h2>
+        <br><br>
+        <form method="post">
+          {% csrf_token %}
+          <input type="submit" class="btn btn-danger" value="Delete">
+          <a class="btn btn-info" href="{% url 'ListView' %}">Cancel</a>
+        </form>
+        </div>
+        </div>
+{% endblock %}

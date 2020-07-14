@@ -1,0 +1,15 @@
+{% extends 'todoapp/base.html' %}
+{% block my_block %}
+
+<form action="{% url 'user_login' %}" method="POST">
+  {% csrf_token %}
+  UserName : <br>
+  <input type="text" name="user" placeholder="Username">
+  <br><br>
+  Password : <br>
+  <input type="text" name="pass" placeholder="Password">
+  <br>
+  <input type="submit" value="Submit">
+
+</form>
+{% endblock %}
